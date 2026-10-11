@@ -1,0 +1,10 @@
+.task_column{
+  color: black;
+  margin: 20px;
+  font-size: medium;
+}
+
+.task_closed_imgicon{
+    width: 1rem;
+    margin-right: 5px;
+}

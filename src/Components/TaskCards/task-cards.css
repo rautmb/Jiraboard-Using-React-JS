@@ -1,0 +1,19 @@
+.task_cards_sub{
+    display: flex;
+    gap: 5rem;
+}
+
+.task_card_tags{
+    display: flex;
+    gap: 5px;
+}
+
+.task_cards{
+        border: 1px solid gray;
+    padding: 0px 10px 10px 10px;
+    border-radius: 10px;
+}
+
+.task_card_img img{
+    width: 1rem;
+}

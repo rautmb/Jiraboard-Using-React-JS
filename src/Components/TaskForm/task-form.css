@@ -1,0 +1,44 @@
+.app_header {
+    text-align: center;
+    border-bottom: 1px solid gray;
+    margin-bottom: 1rem;
+}
+
+.app_heading {
+    color: black;
+}
+
+.task_input {
+    font-weight: 500;
+    color: gray;
+    padding: 5px;
+    width: 40%;
+}
+
+.button_main {
+    margin-top: 1rem;
+    ;
+    display: flex;
+    gap: 9rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.button_style,
+.dropdown_style {
+    display: flex;
+    gap: 5px;
+}
+
+.task_submit {
+    background-color: blue;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+.task_status {
+    border-radius: 4px;
+    padding: 4px;
+}
