@@ -1,10 +1,13 @@
-import React from 'react'
+import {Tagstyle,Tagkey} from '../../Constants/const'
 
 const Tag = (props) => {
-    const{tagName}=props;
+    const{tagName,selectedTag,selected}=props;
+
+    const key=Tagkey[tagName];
+
   return (
     <div>
-      <button className="tag">{tagName}</button>
+      <button className="tag" type="button" style={selected ? Tagstyle[key]:{}} onClick={()=>{selectedTag(tagName)}}>{tagName}</button>
     </div>
   )
 }

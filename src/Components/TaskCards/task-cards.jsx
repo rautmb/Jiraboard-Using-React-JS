@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Tag from '../Tag/tag'
 import Deleteicon from '../../assets/delete_icon.png'
 import './task-cards.css' ;

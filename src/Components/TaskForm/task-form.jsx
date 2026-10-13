@@ -9,7 +9,8 @@ const Taskform = () => {
 
     const [taskdata, setTaskdata] = useState({
         task: '',
-        status: 'Ready for developement'
+        status: 'Ready for developement',
+        tags:[]
     });
 
     const handelchange = (e) => {
@@ -22,6 +23,38 @@ const Taskform = () => {
     const hnadelsubmit = (e) => {
         e.preventDefault();
         console.log(taskdata);
+    }
+
+    const selectedTag=(tag)=>{
+
+        setTaskdata((prev)=>{
+            const isSelected=prev.tags.includes(tag);
+            const tags=isSelected ? prev.tags.filter((item)=>(item!=tag)):[...prev.tags,tag]
+
+            return{...prev,tags}
+        })
+
+        // if(taskdata.tags.some((item)=>(item===tag)))
+        // {
+        //     const filterTags=taskdata.tags.filter((item)=>item!==tag);
+        //     setTaskdata((prev)=>{
+        //         return{...prev,tags:filterTags};
+        //     });
+        // }
+        // else
+        // {
+        //     setTaskdata((prev)=>{
+        //         return{...prev,tags:[...prev.tags,tag]}
+        //     });
+
+        // }
+    }
+
+    console.log(taskdata)
+
+
+    const CheckTag=(tag)=>{
+        return taskdata.tags.some((item)=>(item===tag))
     }
 
     // simple way to define state
@@ -50,9 +83,9 @@ const Taskform = () => {
                     <input type="text" name='task' className="task_input" placeholder="please enter task" onChange={handelchange} />
                     <div className="button_main">
                         <div className="button_style">
-                            <Tag tagName='DEV' />
-                            <Tag tagName='QA' />
-                            <Tag tagName='Product Owner' />
+                            <Tag tagName='DEV' selectedTag={selectedTag} selected={CheckTag('DEV')}/>
+                            <Tag tagName='QA' selectedTag={selectedTag} selected={CheckTag('QA')}/>
+                            <Tag tagName='Product Owner' selectedTag={selectedTag} selected={CheckTag('Product Owner')}/>
                         </div>
                         <div className="dropdown_style">
                             <select className="task_status" name='status' onChange={handelchange}>

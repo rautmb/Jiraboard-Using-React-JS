@@ -1,7 +1,4 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+
 import './App.css'
 
 import Taskform from './Components/TaskForm/task-form'
@@ -10,7 +7,7 @@ import ClosedIcon from './assets/closed_icon.png'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <div className="app">
