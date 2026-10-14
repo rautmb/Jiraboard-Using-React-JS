@@ -3,7 +3,7 @@ import './task-form.css';
 import Tag from '../Tag/tag'
 import { useState } from 'react';
 
-const Taskform = () => {
+const Taskform = ({setTasks}) => {
 
     // when we have multiplt state then we cna difine as below 
 
@@ -20,9 +20,13 @@ const Taskform = () => {
         })
     }
 
-    const hnadelsubmit = (e) => {
+    const handelsubmit = (e) => {
         e.preventDefault();
-        console.log(taskdata);
+        setTasks((prev)=>{
+            return [...prev,taskdata]
+        })
+
+        // console.log(taskdata);
     }
 
     const selectedTag=(tag)=>{
@@ -79,7 +83,7 @@ const Taskform = () => {
         <div>
             <header className="app_header">
                 <h1 className="app_heading">JiraBoard</h1>
-                <form action="" onSubmit={hnadelsubmit}>
+                <form action="" onSubmit={handelsubmit}>
                     <input type="text" name='task' className="task_input" placeholder="please enter task" onChange={handelchange} />
                     <div className="button_main">
                         <div className="button_style">

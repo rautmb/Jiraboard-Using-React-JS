@@ -3,14 +3,13 @@ import Tag from '../Tag/tag'
 import Deleteicon from '../../assets/delete_icon.png'
 import './task-cards.css' ;
 
-const Taskcards = () => {
+const Taskcards = ({title,tags}) => {
   return (
     <article className="task_cards">
-        <p>this is name</p>
+        <p>{title}</p>
         <div className="task_cards_sub">
             <div className="task_card_tags">
-                <Tag tagName='DEV'/>
-                <Tag tagName="QA"/>
+                {tags.map((tag,index)=>(<Tag key={index} tagName={tag} selected/>))}
             </div>
             <div className="task_card_img">
                 <img src={Deleteicon} alt="" />
