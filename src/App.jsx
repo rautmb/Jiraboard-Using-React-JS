@@ -12,14 +12,19 @@ function App() {
   const [tasks,setTasks]=useState([]);
 // console.log(tasks);
 
+const handelDelete=(taskIndex)=>{
+  const newTask=tasks.filter((task,index)=>(index!==taskIndex))
+  setTasks(newTask);
+}
+
   return (
     <div className="app">
       <Taskform setTasks={setTasks}/>
       <main className="app_main">
-        <Taskcolumn title="Ready for development" tasks={tasks} status='Ready for developement'/>
-        <Taskcolumn title="In-Progress" tasks={tasks} status='Inprogress'/>
-        <Taskcolumn title="Ready for test" tasks={tasks} status='Ready for test'/>
-        <Taskcolumn title="Closed" Icon={ClosedIcon} tasks={tasks} status='Closed'/>
+        <Taskcolumn title="Ready for development" tasks={tasks} status='Ready for developement' handelDelete={handelDelete}/>
+        <Taskcolumn title="In-Progress" tasks={tasks} status='Inprogress' handelDelete={handelDelete}/>
+        <Taskcolumn title="Ready for test" tasks={tasks} status='Ready for test' handelDelete={handelDelete}/>
+        <Taskcolumn title="Closed" Icon={ClosedIcon} tasks={tasks} status='Closed' handelDelete={handelDelete}/>
       </main>
     </div>
   )

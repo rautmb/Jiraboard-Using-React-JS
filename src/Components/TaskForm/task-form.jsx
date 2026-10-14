@@ -26,6 +26,11 @@ const Taskform = ({setTasks}) => {
             return [...prev,taskdata]
         })
 
+        setTaskdata({
+        task: '',
+        status: 'Ready for developement',
+        tags:[]
+    });
         // console.log(taskdata);
     }
 
@@ -84,7 +89,7 @@ const Taskform = ({setTasks}) => {
             <header className="app_header">
                 <h1 className="app_heading">JiraBoard</h1>
                 <form action="" onSubmit={handelsubmit}>
-                    <input type="text" name='task' className="task_input" placeholder="please enter task" onChange={handelchange} />
+                    <input type="text" name='task' value={taskdata.task} className="task_input" placeholder="please enter task" onChange={handelchange} />
                     <div className="button_main">
                         <div className="button_style">
                             <Tag tagName='DEV' selectedTag={selectedTag} selected={CheckTag('DEV')}/>
@@ -92,7 +97,7 @@ const Taskform = ({setTasks}) => {
                             <Tag tagName='Product Owner' selectedTag={selectedTag} selected={CheckTag('Product Owner')}/>
                         </div>
                         <div className="dropdown_style">
-                            <select className="task_status" name='status' onChange={handelchange}>
+                            <select className="task_status" name='status' value={taskdata.status} onChange={handelchange}>
                                 <option value="Ready for developement">Ready for developement</option>
                                 <option value="Inprogress">Inprogress</option>
                                 <option value="Ready for test">Ready for test</option>
